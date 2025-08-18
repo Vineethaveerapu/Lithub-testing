@@ -20,7 +20,7 @@
             When a user clicks the Add Button, a message like "Book Title added to your reading list!" appears for a few seconds before disappearing. If user clicks
             again on the same book , a message like "Book Title already in your reading list" appears for a few seconds before disappearing . These message are shown below all the books.
 
-    ReadingList page: whatever user adds the books the list appears in this page. If user haven't add any book "you haven't added any books" message will show.
+    ReadingList page: whatever user adds the books the list appears in this page. If user haven't add any book "you haven't added any books" inpu will show.
 
     
      
