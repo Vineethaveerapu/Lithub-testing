@@ -1,13 +1,13 @@
 'use client';
 import ReadingList from '@/components/ReadingList';
-import { useState, useEffect } from 'react';
+import { useReadingList } from '@/components/ReadingListProvider';
 
 export default function ReadingListPage() {
-  const books = [] as string[];
+  const { favoriteBooks } = useReadingList();
 
   return (
     <div>
-      <ReadingList books={books} />
+      <ReadingList books={favoriteBooks} />
     </div>
   );
 }

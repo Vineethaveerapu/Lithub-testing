@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import { ReadingListProvider } from '@/components/ReadingListProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,12 +30,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white font-sans flex flex-col min-h-screen`}>
-        <header>
-          <Header title="LitHub" />
-          <Navigation />
-        </header>
-        <main className="p-8 flex-grow">{children}</main>
-        <Footer />
+        <ReadingListProvider>
+          <header>
+            <Header title="LitHub" />
+            <Navigation />
+          </header>
+          <main className="p-8 flex-grow">{children}</main>
+          <Footer />
+        </ReadingListProvider>
       </body>
     </html>
   );
