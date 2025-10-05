@@ -28,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white font-sans`}>
-        <Header title="LitHub" />
-        <Navigation />
-        <main className="px-8">{children}</main>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white font-sans flex flex-col min-h-screen`}>
+        <header>
+          <Header title="LitHub" />
+          <Navigation />
+        </header>
+        <main className="p-8 flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
