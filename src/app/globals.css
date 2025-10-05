@@ -8,4 +8,24 @@ body {
   background-color: #fff;
   color: #111827;
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+footer nav {
+  margin-top: 1rem;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
