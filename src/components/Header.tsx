@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
-    <header className="flex items-center justify-center gap-9 p-4 px-8 border-b border-gray-200">
+    <div className="flex items-center justify-center gap-9 p-4 px-8 border-b border-gray-200">
       <img
         src="/library.svg"
         alt="Logo"
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-500">
         {title}
       </h1>
-    </header>
+    </div>
   );
 };
 
