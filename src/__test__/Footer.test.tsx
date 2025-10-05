@@ -6,7 +6,12 @@ describe('Footer Headings', () => {
   it('renders all h4 headings', () => {
     render(<Footer />);
     const headings = screen.getAllByRole('heading', { level: 4 });
-    const expectedTexts = ['About LitHub', 'Quick Links', 'Legal', 'Connect with Us'];
+    const expectedTexts = [
+      'About LitHub',
+      'Quick Links',
+      'Legal',
+      'Connect with Us',
+    ];
 
     expect(headings.length).toBe(4);
     headings.forEach((heading, index) => {
@@ -38,20 +43,12 @@ describe('Footer Links', () => {
 describe('Footer Social Media', () => {
   it('renders 4 social icons with proper links', () => {
     render(<Footer />);
-    
+
     const socialLinks = [
-      { name: 'Facebook',
-        href: '#'
-      },
-      { name: 'Twitter', 
-        href: '#' 
-      },
-      { name: 'Instagram', 
-        href: '#'
-      },
-      { name: 'LinkedIn',
-        href: '#'
-      },
+      { name: 'Facebook', href: '#' },
+      { name: 'Twitter', href: '#' },
+      { name: 'Instagram', href: '#' },
+      { name: 'LinkedIn', href: '#' },
     ];
 
     const socialIcons = screen.getAllByTestId('social-icons');
@@ -68,13 +65,17 @@ describe('Footer Copyright', () => {
   it('renders current year copyright', () => {
     render(<Footer />);
     const currentYear = new Date().getFullYear();
-    expect(screen.getByText(`© ${currentYear} LitHub. All rights reserved.`)).toBeInTheDocument();
+    expect(
+      screen.getByText(`© ${currentYear} LitHub. All rights reserved.`)
+    ).toBeInTheDocument();
   });
 });
 describe('Footer About Section', () => {
   it('renders About LitHub heading and description', () => {
     render(<Footer />);
     expect(screen.getByText('About LitHub')).toBeInTheDocument();
-    expect(screen.getByText(/LitHub is your daily source/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/LitHub is your daily source/i)
+    ).toBeInTheDocument();
   });
 });

@@ -1,14 +1,14 @@
 // __tests__/ReadingListContext.test.tsx
 import React from 'react';
 import { renderHook, act } from '@testing-library/react';
-import { ReadingListProvider, useReadingList } from '@/components/ReadingListProvider';
+import {
+  ReadingListProvider,
+  useReadingList,
+} from '@/components/ReadingListProvider';
 
 describe('ReadingListContext', () => {
-  
   const wrapper = ({ children }: { children: React.ReactNode }) => (
-    <ReadingListProvider>
-      {children}
-    </ReadingListProvider>
+    <ReadingListProvider>{children}</ReadingListProvider>
   );
 
   test('provides an empty initial favoriteBooks array', () => {
@@ -31,9 +31,9 @@ describe('ReadingListContext', () => {
 
     act(() => {
       result.current.addBook('1984');
-      result.current.addBook('1984'); 
+      result.current.addBook('1984');
     });
 
-    expect(result.current.favoriteBooks).toEqual(['1984']); 
+    expect(result.current.favoriteBooks).toEqual(['1984']);
   });
 });

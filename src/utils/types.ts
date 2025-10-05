@@ -1,4 +1,3 @@
-
 export interface BookType {
   title: string;
   author: string;
@@ -17,6 +16,3 @@ export interface BookListProps {
 export interface ReadingListProps {
   books?: string[];
 }
-
-
-
