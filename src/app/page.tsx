@@ -3,6 +3,7 @@
 import BookList from '@/components/BookList';
 import { books } from '@/data/books';
 import { useReadingList } from '@/components/ReadingListProvider';
+import FeaturedBook from '@/components/FeaturedBook';
 
 export default function Home() {
   const { addBook } = useReadingList();
@@ -11,8 +12,11 @@ export default function Home() {
     addBook(title);
   };
 
+  const featuredBook = books[Math.floor(Math.random() * books.length)];
+
   return (
-    <div>
+    <div className="space-y-4">
+      <FeaturedBook {...featuredBook} />
       <BookList
         books={books}
         onAdd={handleAdd}
