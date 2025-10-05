@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface ReadingListContextType {
   favoriteBooks: string[];
-  addBook: (title: string) => void;
+  addBook: (title: string) => boolean; // Returns true if book was added, false if already exists
 }
 
 const ReadingListContext = createContext<ReadingListContextType | undefined>(
@@ -18,14 +18,18 @@ interface ReadingListProviderProps {
 export const ReadingListProvider = ({ children }: ReadingListProviderProps) => {
   const [favoriteBooks, setFavoriteBooks] = useState<string[]>([]);
 
-  const addBook = (title: string) => {
+  const addBook = (title: string): boolean => {
+    let wasAdded = false;
     setFavoriteBooks((prevBooks) => {
       // Prevent duplicates by checking if book already exists
       if (prevBooks.includes(title)) {
+        wasAdded = false;
         return prevBooks;
       }
+      wasAdded = true;
       return [...prevBooks, title];
     });
+    return wasAdded;
   };
 
   const value: ReadingListContextType = {
